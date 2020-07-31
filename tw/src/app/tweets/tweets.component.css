@@ -1,0 +1,70 @@
+
+mat-sidenav-content{
+  height: 100%;
+  width: 100%;
+  overflow-anchor:none;
+  background-color: orangered;
+}
+mat-sidenav-container{
+  height: auto;
+  overflow-y:hidden;
+  
+}
+mat-sidenav-container::-webkit-scrollbar {
+  display: none;
+}
+mat-sidenav-content h1{
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 20px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+ 
+}
+mat-card{
+  text-align: center;
+}
+nav{
+  background-color: black;
+}
+
+nav ul li{
+  padding-left: 20px;
+}
+nav ul li a{
+  color:white;
+  font-weight: 400;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+navbar-toggler-icon{
+  color: antiquewhite;
+}
+#next{
+  background-color:white;
+  width: 100%;
+  border-radius: 0%;
+  line-height: 2;
+  color: black;
+  letter-spacing: 2px;
+}
+
+mat-nav-list{
+  background-color: black;
+  height: 100%;
+  overflow-y: hidden;
+
+}
+.jumbotron{
+  background-color: white;
+}
+
+#tweet{
+  padding: 20px;
+}
+
+mat-sidenav-content #tweet-box{
+ margin-top: 20px; 
+ background-color: black;
+ color: slateblue;
+}

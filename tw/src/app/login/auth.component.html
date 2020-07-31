@@ -1,0 +1,53 @@
+<div class="container">
+    <form (submit)="login()" id="login">
+        <mat-card>
+        <table class='table table-borderless'>
+            <tr>
+            <th colspan=2>
+            login into Zwitter
+            </th>
+        </tr>
+        <tr>
+            <td> 
+            <mat-form-field> 
+                <input 
+                matInput 
+                type="text" 
+                name="userID" 
+                required 
+                placeholder='Email'
+                [(ngModel)]='credentials.user_email'
+                
+                />
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                <mat-form-field>
+                    <input 
+                    matInput 
+                    type="password" 
+                    name="userP" 
+                    required 
+                    placeholder="Password"
+                    [(ngModel)]='credentials.user_password'
+                    >
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button 
+                mat-raised-button color="primary" 
+                type="submit" class='next'matRipple >
+                Login 
+                </button>
+            </td>
+        </tr>
+                    
+            </table>
+
+        </mat-card>
+    </form>
+</div>

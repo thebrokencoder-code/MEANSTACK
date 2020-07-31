@@ -1,0 +1,85 @@
+<div class="container">
+    <form (submit)="register()" id="login">
+        <mat-card>
+            
+                <table class='table table-borderless'>
+                 <tr>
+                    <th colspan=2>
+                    Create a new acc..
+                    </th>
+                </tr>
+                <tr>
+                    <td> 
+                    <mat-form-field> 
+                        <input 
+                        matInput 
+                        type="text" 
+                        name="userID" 
+                        required 
+                        placeholder='First Name'
+                        [(ngModel)]='credentials.user_fname'
+                        />
+                        </mat-form-field>
+                    </td>
+                </tr>
+            <tr>
+                    <td> 
+                    <mat-form-field> 
+                        <input 
+                        matInput 
+                        type="text" 
+                        name="userID" 
+                        required 
+                        placeholder='Last Name'
+                        [(ngModel)]='credentials.user_lname'
+                        />
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+
+                
+                <tr>
+                    <td> 
+                    <mat-form-field> 
+                        <input 
+                        matInput 
+                        type="email" 
+                        name="userID" 
+                        required 
+                        placeholder='Email'
+                        [(ngModel)]='credentials.user_email'
+                        />
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 
+                        <mat-form-field>
+                            <input 
+                            matInput 
+                            type="password" 
+                            name="userP" 
+                            required 
+                            placeholder="Password"
+                            [(ngModel)]='credentials.user_password'
+                            >
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button 
+                    
+                        mat-raised-button color="primary" 
+                        type="submit"   class='next'matRipple >
+                        Login 
+                        </button>
+                    </td>
+                </tr>
+                         
+                  </table>
+
+        </mat-card>
+    </form>
+</div>

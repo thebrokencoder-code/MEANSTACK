@@ -1,0 +1,158 @@
+<nav class="navbar navbar-expand-lg navbar rounded">
+    <button 
+    class="navbar-toggler" 
+    type="button" 
+    data-toggle="collapse" 
+    data-target="#collapsibleNavId" 
+    aria-controls="collapsibleNavId"
+    aria-expanded="false" 
+    aria-label="Toggle navigation">
+        Menu
+    </button>
+    <div class="collapse navbar-collapse justify-content-md-center" id="collapsibleNavId">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" *ngIf="!auth.isLoggedIn()">
+                <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="auth.isLoggedIn()">
+                <a class="nav-link" routerLink="/profile">Welcome,{{auth.getUserDetails()?.user_lname}}</a>
+            </li>
+            <li class="nav-item" *ngIf="!auth.isLoggedIn()">
+                <a class="nav-link" routerLink="/register">Register</a>
+            </li>
+            <li class="nav-item" *ngIf="auth.isLoggedIn()">
+                <a class="nav-link" routerLink="" (click)="auth.logout()">Logout</a>
+            </li>
+            <li class="nav-item" *ngIf="auth.isLoggedIn()">
+                   <button mat-raised-button color="success" (click)="sidenav.toggle()" >
+               Profile
+                </button>
+            </li>
+        </ul>
+    </div>
+</nav>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+        <div class="container">
+            <div class="jumbotron">
+            <div class="col-sm-8 mx-auto">
+                <h1 class="text-center">Profile</h1>
+                 <img src="/assets/icons/login-user-img.png" class="rounded-circle" alt="Cinque Terre"> 
+            </div>
+            <table class="table table-borderless">
+            
+                <tr>
+                    <td>First Name</td>
+                    <td>{{details?.user_fname}}</td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>{{details?.user_lname}}</td>
+                </tr>
+                <tr>
+                    <td>Registered Email</td>
+                    <td>{{details?.user_email}}</td>
+                </tr>
+
+                 <tr>
+                    <td colspan=2 class="text-center">
+                        <button mat-raised-button  (click)="viewprofile()">EDIT</button>
+                    </td>
+                </tr>
+                
+            </table>
+            </div>
+        </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <h1 class="text-center"> Trends...</h1>
+            <mat-card id="tweet-box"
+            *ngFor="let td of tweetdetails; let i = index"
+            [class.active]="i == currentIndex">
+                <mat-card-title>
+                    {{ td.title }} 
+                </mat-card-title>
+                <mat-card-content>
+                    {{td.content}}
+                </mat-card-content>
+            </mat-card>
+    
+                                   
+        </div>
+        <div class="col-3 mt-lg-5">
+        
+        <form (submit)="addtweet()">
+                        <mat-card>
+                            <table class='table table-borderless'>
+                                <tr>
+                                    <th colspan=2>
+                                    Add a tweet..
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td> 
+                                    <mat-form-field> 
+                                        <input 
+                                        matInput 
+                                        type="email" 
+                                        name="userID" 
+                                        required 
+                                    
+                                        [(ngModel)]='tweets.title'
+                                        />
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> 
+                                        <mat-form-field>
+                                            <input 
+                                            matInput 
+                                            type="text" 
+                                            name="userP" 
+                                            required 
+                                            [(ngModel)]='tweets.content'
+                                            >
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button 
+                                        mat-raised-button color="primary" 
+                                        type="submit"   class='next'matRipple >
+                                        Tweet 
+                                        </button>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </mat-card>
+                    </form>
+ 
+        
+        
+        
+        
+        </div>
+  
+    </div>
+   
+    
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+<router-outlet></router-outlet>
