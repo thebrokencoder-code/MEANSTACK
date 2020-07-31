@@ -1,0 +1,21 @@
+[
+{"type":"header","version":"5.0.2","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"nodedb"},
+{"type":"table","name":"tweet","database":"nodedb","data":
+[
+{"id":"1","title":"hello","content":"world"},
+{"id":"2","title":"hello2","content":"hi"},
+{"id":"3","title":"hi","content":"mytweet"},
+{"id":"4","title":"hi","content":"mytweet"},
+{"id":"5","title":"final tweet","content":"idk"},
+{"id":"6","title":"live","content":"tweet"},
+{"id":"7","title":"newtweet","content":"hello world"}
+]
+}
+,{"type":"table","name":"user","database":"nodedb","data":
+[
+{"user_id":"1","user_fname":"elonwa","user_lname":"","user_email":"spaceX@gmail.com","user_password":"$2b$10$teq8a5ohPCJGwYcYB43XhuBmfuzZqV6OWvf0pLXL0\/ZpZKy7n58iO","created":"2020-07-29 11:14:28"},
+{"user_id":"2","user_fname":"balaji","user_lname":"bechara","user_email":"jaanede@gmail.com","user_password":"$2b$10$oUIIUVk.y5I1sCmNzW6M5eI2pkIs5BOzyo6oDZkPeASoCOSNqIA5.","created":"2020-07-29 17:36:00"}
+]
+}
+]
