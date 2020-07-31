@@ -1,4 +1,5 @@
-# twitterclone
+# twitter-type-project
+# A beginner level project , development is in progress
 
 FrontEnd :Angular,Angular Material,Bootstrap
 BackEnd :Mysql,ExpressJS,Node run time
